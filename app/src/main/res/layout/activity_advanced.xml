@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="限制控件的宽度，使其不能覆盖其他控件\n使用app:layout_constrainedWidth='true'属性"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text10"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="@id/text1"
+            app:layout_constraintTop_toBottomOf="@id/text1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="textViewtextViewtextViewtextViewtextViewtextViewtextViewtextViewtextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/text10"
+            app:layout_constraintTop_toTopOf="@id/text10" />
+
+        <TextView
+            android:id="@+id/text11"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="@id/text1"
+            app:layout_constraintTop_toBottomOf="@id/text10" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="textViewtextViewtextViewtextViewtextViewtextViewtextViewtextViewtextView"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/text11"
+            app:layout_constraintTop_toTopOf="@id/text11" />
+
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="偏移效果\n使用layout_constraintHorizontal_bias属性对View进行偏移处理\n如果是横向的话，那么0.5表示居中\n小于0.5左偏移，大于0.5右偏移"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text11" />
+
+        <TextView
+            android:id="@+id/text21"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="@id/text2"
+            app:layout_constraintTop_toBottomOf="@id/text2" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@color/green"
+            android:text="未偏移、或者偏移0.5"
+            app:layout_constraintBottom_toBottomOf="@id/text21"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/text21"
+            app:layout_constraintTop_toTopOf="@id/text21" />
+
+        <TextView
+            android:id="@+id/text20"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="@id/text21"
+            app:layout_constraintTop_toBottomOf="@id/text21" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@color/green"
+            android:text="已偏移0.3"
+            app:layout_constraintBottom_toBottomOf="@id/text20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toEndOf="@id/text20"
+            app:layout_constraintTop_toTopOf="@id/text20" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:text="预设置margin\n如果前一个控件设为gone，那么该margin值起作用\n比如设置layout_goneMarginStart，那么就会出现如下的效果\n注意：该属性设置在不隐藏的View上"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text20" />
+
+        <TextView
+            android:id="@+id/text31"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/green"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text3" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintStart_toEndOf="@id/text31"
+            app:layout_constraintTop_toTopOf="@id/text31" />
+
+        <TextView
+            android:id="@+id/text32"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/green"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text31" />
+
+        <TextView
+            android:id="@+id/text33"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary"
+            android:text="左侧的View消失"
+            android:textColor="#ffffff"
+            app:layout_constraintStart_toEndOf="@id/text32"
+            app:layout_constraintTop_toTopOf="@id/text32"
+            app:layout_goneMarginStart="20dp" />
+
+        <TextView
+            android:id="@+id/text4b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="百分百布局\n将当前空间设置为父View的百分之几\nwidth或height设为0\nlayout_constraintWidth_percent=0.3"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text33" />
+
+        <TextView
+            android:id="@+id/text4b1"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/green"
+            app:layout_constraintStart_toStartOf="@id/text4b"
+            app:layout_constraintTop_toBottomOf="@id/text4b"
+            app:layout_constraintWidth_percent="0.3" />
+
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="约束链风格"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text4b1" />
+
+        <TextView
+            android:id="@+id/text41"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#a33F51B5"
+            android:text="约束链风格"
+            app:layout_constraintBottom_toTopOf="@id/text42"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/text42"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@color/colorAccent"
+            android:text="约束链风格"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text41" />
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="设置控件的宽高比 使用率不高，不学习"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text4" />
+
+        <Button
+            android:id="@+id/button51"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:text="button"
+            app:layout_constraintDimensionRatio="2:1"
+            app:layout_constraintStart_toStartOf="@id/text5"
+            app:layout_constraintTop_toBottomOf="@id/text5" />
+
+        <Button
+            android:id="@+id/button52"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:text="button"
+            app:layout_constraintDimensionRatio="2:1"
+            app:layout_constraintStart_toStartOf="@id/text5"
+            app:layout_constraintTop_toBottomOf="@id/button51" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

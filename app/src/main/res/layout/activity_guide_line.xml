@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guideline用法\n\n使用Guideline控件，会在屏幕上绘制一条辅助线\n这样就可以让两个控件向Guideline对齐，实现如下的效果\n可以使用layout_constraintGuide_begin=140dp指定Guideline的位置\n也可以使用layout_constraintGuide_percent=0.4指定其百分比\n可以使用orientation设置其方向"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_line"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="140dp" /><!--app:layout_constraintGuide_percent="0.4"  layout_constraintGuide_end-->
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="200dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintEnd_toStartOf="@id/guide_line"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/text1"
+            app:layout_constraintStart_toEndOf="@id/guide_line"
+            app:layout_constraintTop_toTopOf="@id/text1" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="100dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintEnd_toStartOf="@id/guide_line"
+            app:layout_constraintTop_toBottomOf="@id/text1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
