@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -182,7 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="40dp"
-            android:text="约束链风格"
+            android:text="约束链风格\n将两个控件之间相互依赖，就构成了约束链\n我们可以设置约束链的样式来改变两个控件的效果\n需要在第一个View中使用:layout_constraintVertical_chainStyle属性\npacked：两个控件之间没有间隔\nspread：默认样式，和不设置的效果一直\nspread_inside：两个控件，分别位于顶部和底部\n效果见约束链风格A和约束链风格B"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text4b1" />
@@ -192,7 +193,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#a33F51B5"
-            android:text="约束链风格"
+            android:text="约束链风格A"
+            android:gravity="center"
             app:layout_constraintBottom_toTopOf="@id/text42"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -204,7 +206,8 @@
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:background="@color/colorAccent"
-            android:text="约束链风格"
+            android:text="约束链风格B"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

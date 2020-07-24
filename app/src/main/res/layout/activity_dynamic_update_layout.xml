@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="group的用法\n避免布局嵌套，降低布局层级\nGroup使用constraint_referenced_ids属性，将其余控件归为一个group\n这样可以直接在Group上为⼀组控件统⼀设置 setVisibility"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="text11,text12" /><!--android:visibility="gone"-->
+
+    <TextView
+        android:id="@+id/text11"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent"
+        android:text="group text1"
+        app:layout_constraintStart_toStartOf="@id/text1"
+        app:layout_constraintTop_toBottomOf="@id/text1" />
+
+    <TextView
+        android:id="@+id/text12"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:background="@color/colorPrimary"
+        android:text="group text2"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/text11"
+        app:layout_constraintTop_toTopOf="@id/text11" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Layer的用法(暂时无Layer的库)\n避免布局嵌套，降低布局层级\n和Group一样，需要使用constraint_referenced_ids将多个View整合到一起\n然后通过Layer⼀组控件统⼀设置旋转/缩放/位移"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/text1"
+        app:layout_constraintTop_toBottomOf="@id/text11" />
+
+
+    <TextView
+        android:id="@+id/text21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="text1"
+        app:layout_constraintStart_toStartOf="@id/text1"
+        app:layout_constraintTop_toBottomOf="@id/text2" />
+
+    <TextView
+        android:id="@+id/text22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="text2"
+        app:layout_constraintStart_toEndOf="@id/text21"
+        app:layout_constraintTop_toTopOf="@id/text21" />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Barrier的用法\n为一组View设置边界\n保证了这一一组View不会超过该边界"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/text1"
+        app:layout_constraintTop_toBottomOf="@id/text21" />
+
+    <TextView
+        android:id="@+id/text37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="未使用Barrier"
+        app:layout_constraintStart_toStartOf="@id/text3"
+        app:layout_constraintTop_toBottomOf="@id/text3" />
+
+    <TextView
+        android:id="@+id/text31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="11111111111111"
+        app:layout_constraintStart_toStartOf="@id/text37"
+        app:layout_constraintTop_toBottomOf="@id/text37" />
+
+    <TextView
+        android:id="@+id/text32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="22222222222222222"
+        app:layout_constraintStart_toStartOf="@id/text3"
+        app:layout_constraintTop_toBottomOf="@+id/text31" />
+
+    <TextView
+        android:id="@+id/text33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="3333333"
+        app:layout_constraintStart_toEndOf="@id/text31"
+        app:layout_constraintTop_toTopOf="@id/text31" />
+
+    <TextView
+        android:id="@+id/text39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="444444"
+        app:layout_constraintStart_toStartOf="@id/text33"
+        app:layout_constraintTop_toTopOf="@id/text32" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="text34,text35" />
+
+    <TextView
+        android:id="@+id/text38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="已使用Barrier\n保证了1111和2222不会超过边界"
+        app:layout_constraintStart_toStartOf="@id/text3"
+        app:layout_constraintTop_toBottomOf="@id/text32" />
+
+    <TextView
+        android:id="@+id/text34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="11111111111"
+        app:layout_constraintStart_toStartOf="@id/text3"
+        app:layout_constraintTop_toBottomOf="@id/text38" />
+
+
+    <TextView
+        android:id="@+id/text35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="2222222222222222222"
+        app:layout_constraintStart_toStartOf="@id/text3"
+        app:layout_constraintTop_toBottomOf="@+id/text34" />
+
+    <TextView
+        android:id="@+id/text36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="3333333"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintTop_toTopOf="@id/text34" />
+
+    <TextView
+        android:id="@+id/text310"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="444444"
+        app:layout_constraintStart_toStartOf="@id/text36"
+        app:layout_constraintTop_toTopOf="@id/text35" />
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="PlaceHolder的用法\n图片的占位符，点击下面的三个图片，被点击的会被移至PlaceHolder的位置\n并且三个图片会变为两个\n需要调用setContentId()配合"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/text1"
+        app:layout_constraintTop_toBottomOf="@id/text35" />
+
+    <androidx.constraintlayout.widget.Placeholder
+        android:id="@+id/place_holder"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text4" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:src="@color/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@id/image_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/place_holder" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:onClick="onClick"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintEnd_toStartOf="@id/image_3"
+        app:layout_constraintStart_toEndOf="@id/image_1"
+        app:layout_constraintTop_toTopOf="@id/image_1" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:onClick="onClick"
+        android:src="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/image_2"
+        app:layout_constraintTop_toTopOf="@id/image_1" />
+
+    <TextView
+        android:id="@+id/text5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="ConstraintSet用法"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/text1"
+        app:layout_constraintTop_toBottomOf="@id/image_1" />
+
+    <Button
+        android:id="@+id/btn_51"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="动态修改布局"
+        app:layout_constraintTop_toBottomOf="@id/text5"
+        app:layout_constraintStart_toStartOf="@id/text5"/>
+
+    <TextView
+        android:id="@+id/text51"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="原本的位置"
+        app:layout_constraintTop_toTopOf="@id/btn_51"
+        app:layout_constraintStart_toEndOf="@id/btn_51"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

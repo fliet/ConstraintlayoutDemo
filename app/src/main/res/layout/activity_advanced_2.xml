@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -123,6 +124,7 @@
             app:layout_constraintTop_toTopOf="@id/text31" />
 
         <TextView
+            android:id="@+id/text39"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="444444"
@@ -174,6 +176,7 @@
             app:layout_constraintTop_toTopOf="@id/text34" />
 
         <TextView
+            android:id="@+id/text310"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="444444"
@@ -185,7 +188,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="PlaceHolder的用法\n图片的占位符，点击下面的三个图片，被点击的会被移至PlaceHolder的位置\n并且三个图片会变为两个\n需要调用setContentId()配合"
+            android:text="PlaceHolder的用法\n图片的占位符，点击下面的三个图片，被点击的会被移至PlaceHolder的位置\n并且三个图片会变为两个\n需要调用setContentId()配合\n\n配合TransitionManager使用可以自动完成过渡动画"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/text1"
             app:layout_constraintTop_toBottomOf="@id/text35" />
@@ -229,6 +232,35 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image_2"
             app:layout_constraintTop_toTopOf="@id/image_1" />
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="ConstraintSet用法\n动态的修改布局\n替换通过LayoutParams修改布局"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/text1"
+            app:layout_constraintTop_toBottomOf="@id/image_1" />
+
+        <Button
+            android:id="@+id/btn_51"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="动态修改布局"
+            app:layout_constraintTop_toBottomOf="@id/text5"
+            app:layout_constraintStart_toStartOf="@id/text5"/>
+
+        <TextView
+            android:id="@+id/text51"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="原本的位置"
+            app:layout_constraintTop_toBottomOf="@id/btn_51"
+            app:layout_constraintStart_toStartOf="@id/btn_51"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
